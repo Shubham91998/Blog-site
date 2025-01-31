@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba((0, 0, 0, 0.1), green, blue, alpha);
+        }
+
+        .heading {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+
+        }
+
+        .imageFile {
+            margin-top: 10px;
+            margin-bottom: 50px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/user/updatePicture" method="POST" enctype="multipart/form-data">
+        <div class="mb-3 update">
+            <label for="userProfileImage" class="form-label heading">Choose a new profile image</label>
+
+            <input type="file" class="form-control imageFile" name="userProfileImage" id="userProfileImage" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</body>
+
+</html>

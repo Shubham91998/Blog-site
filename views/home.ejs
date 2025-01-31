@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partial/head') %>
+    <style>
+        .card{
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .card-body{
+            height: 150px;
+            overflow: hidden;
+        }
+        .card-img-top{
+            height: 200px;
+            object-fit: cover;
+        }
+        .card:hover{
+            transform: scale(1.05);
+        }
+    </style>
+
+        <title>Home Page</title>
+</head>
+
+<body>
+
+
+
+    <%- include('./partial/nav') %>
+
+        <div class="container mt-3 ">
+            <div class="row">
+                <% blogs.forEach(blog=> { %>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card" style="width: 100%;">
+                            <img class="card-img-top" src="<%= blog.coverImageURL %>" alt="<%= blog.title %>">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= blog.title %>
+                                </h5>
+                                <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% }) %>
+            </div>
+
+        </div>
+
+        <%- include('./partial/scripts') %>
+
+</body>
+
+</html>
